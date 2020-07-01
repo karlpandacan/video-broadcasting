@@ -88,18 +88,20 @@ document.getElementById("stream").addEventListener('click', () => {
 
 document.getElementById('receive').addEventListener('click', function () {
     console.log('Connecting to Stream.')
+    var socketId = socket.io.engine.id;
+    var attendee = new Object;
     // socket.emit('NewClientReceiver')
-    let attendee = new Peer();
+    attendee[socketId] = new Peer();
 
-    attendee.on('signal', data => {
+    attendee[socketId].on('signal', data => {
         socket.emit('signal', data);
     });
 
     socket.on('signal', data => {
-        attendee.signal(data)
+        attendee[socketId].signal(data)
     });
 
-    attendee.on('stream', stream => {
+    attendee[socketId].on('stream', stream => {
         let video = document.getElementById('rVideo');
         video.srcObject = stream;
     });
@@ -107,7 +109,7 @@ document.getElementById('receive').addEventListener('click', function () {
     // Ask broadcaster to start his connection
     socket.emit("startConnection")
 
-    attendee.on('error', (err) => {
+    attendee[socketId].on('error', (err) => {
         console.log('error');
         alert('Something Went Wrong.')
     });
