@@ -1,0 +1,27 @@
+{
+  "name": "karlvideoapp",
+  "version": "1.0.0",
+  "description": "Video Chat App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "npx watchify ./public/client.js -o ./public/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "Karl Pandacan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "peer": "^0.5.3",
+    "peerjs": "^1.2.0",
+    "simple-peer": "^9.7.2",
+    "socket.io": "^2.3.0",
+    "watchify": "^3.11.1",
+    "webpack": "^4.43.0",
+    "wrtc": "^0.4.5"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  }
+}

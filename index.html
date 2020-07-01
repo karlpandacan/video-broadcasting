@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="VIDEO CHAT APP">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Chat APP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <!-- <video id="vid" autoplay="true"></video> -->
+            <h1 class="h3 mb-3 font-weight-normal">Chat With Me</h1>
+            <div id="chat-window">
+                <div id="output"></div>
+                <div id="typing"></div>
+            </div>
+            <div class="container">
+                <input type="text" id="handle" class="form-control" placeholder="Enter Name">
+                <input type="text" id="message" class="form-control" placeholder="Enter Message">
+                <button id="button" class="btn btn-lg btn-primary btn-block" type="button">Send</button>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Local
+                        <video class="rVideo" id="lVideo" autoplay="autoplay" muted width="100%"></video>
+                    </div>
+                    <div class="col-sm-6">
+                        Remote
+                        <video class="rVideo" id="rVideo" autoplay="autoplay" width="100%"></video>
+                    </div>
+                </div>
+                <span id="displayId"></span>
+                <input type="text" id="connId" class="form-control" placeholder="Enter Connection ID">
+                <button id="stream" class="btn btn-lg btn-success btn-block" type="button">Stream</button>
+                <button id="receive" class="btn btn-lg btn-danger btn-block" type="button">Receive</button>
+                <!-- <button id="combo_btn" class="btn btn-lg btn-danger btn-block" type="button">Join</button> -->
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/bundle.js"></script>
+</body>
+
+</html>
