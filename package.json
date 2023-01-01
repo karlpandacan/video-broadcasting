@@ -18,10 +18,10 @@
     "simple-peer": "^9.7.2",
     "socket.io": "^2.3.0",
     "watchify": "^3.11.1",
-    "webpack": "^4.43.0",
+    "webpack": "^5.75.0",
     "wrtc": "^0.4.5"
   },
   "devDependencies": {
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^5.0.1"
   }
 }
